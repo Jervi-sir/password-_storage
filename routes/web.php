@@ -46,7 +46,6 @@ Route::prefix('social')->group(function () {
 
 Route::prefix('statistic')->group(function () {
     Route::get('/all', [StatisticController::class, 'index'])->name('statistic.all');
-    Route::post('/upload', [StatisticController::class, 'upload'])->name('social.upload');
 });
 
 
