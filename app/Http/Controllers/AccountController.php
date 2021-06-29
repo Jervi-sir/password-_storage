@@ -22,11 +22,12 @@ class AccountController extends Controller
 
         //check if email already exist
         $user =  Auth()->user();
-        $exist = Account::where('user_id', $user->id)->where('name', $request->email)->count();
+        $exist = Account::where('user_id', $user->id)->where('social_id', $social_id)->where('name', $request->email)->count();
 
         if ($exist != 0) {
             return back()->with('error', 'Account Already exists!');
         }
+
         $account = new Account;
         $account->user_id = Auth()->user()->id;
         $account->social_id = $social_id;
