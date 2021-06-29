@@ -24,7 +24,6 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
-
 Route::prefix('account')->group(function () {
     Route::get('/add', [AccountController::class, 'add'])->name('account.add');
     Route::get('/show', [AccountController::class, 'show'])->name('account.show');
@@ -40,7 +39,7 @@ Route::prefix('social')->group(function () {
     Route::post('/upload', [SocialController::class, 'upload'])->name('social.upload');
     Route::get('/all', [SocialController::class, 'all'])->name('social.all');
     Route::post('/delete', [SocialController::class, 'destroy'])->name('social.delete');
-    Route::post('/edit', [SocialController::class, 'edit'])->name('social.edit');
+    Route::get('/edit', [SocialController::class, 'edit'])->name('social.edit');
     Route::post('/update', [SocialController::class, 'update'])->name('social.update');
 });
 

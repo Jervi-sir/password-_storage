@@ -1,4 +1,21 @@
 <x-app-layout>
+    <style>
+        /* The Modal (background) */
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 1; /* Sit on top */
+            padding-top: 100px; /* Location of the box */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgb(0,0,0); /* Fallback color */
+            background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+        }
+    </style>
+
     @if (session('alert'))
     <div class="bg-green-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
         <strong class="font-bold">{{ session('alert') }}</strong>
@@ -43,7 +60,7 @@
                                 <td class="border px-6 py-4 cursor-pointer">{{ $social->accounts()->count() }}</td>
                                 <td class="border px-2 py-4 text-xs">
                                     <div class="inline-flex ">
-                                        <form action="{{ route('social.edit') }}" method="POST">
+                                        <form action="{{ route('social.edit') }}" method="GET">
                                             @csrf
                                             <input type="hidden" name="id" value="{{ $social->id }}">
                                             <button class="bg-gradient-to-r from-green-400 to-purple-400 text-green-800 hover:text-red-800 font-bold py-2 px-4 rounded-l border-b-4 border-pink-700">
@@ -107,22 +124,7 @@
     </x-table2-card>
 </x-app-layout>
 
-<style>
-    /* The Modal (background) */
-    .modal {
-        display: none; /* Hidden by default */
-        position: fixed; /* Stay in place */
-        z-index: 1; /* Sit on top */
-        padding-top: 100px; /* Location of the box */
-        left: 0;
-        top: 0;
-        width: 100%; /* Full width */
-        height: 100%; /* Full height */
-        overflow: auto; /* Enable scroll if needed */
-        background-color: rgb(0,0,0); /* Fallback color */
-        background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-    }
-</style>
+
     
 <script>
     var modals = document.getElementsByClassName('modal');

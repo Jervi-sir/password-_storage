@@ -18,6 +18,12 @@ class SocialController extends Controller
         $lower = strtolower($request->platform);        // all of letter are lower cases
         $upper = ucwords($lower);                       // except the first letter of each word
 
+        $exist = Social::where('code', $lower)->count();
+
+        if ($exist != 0) {
+            return back()->with('error', 'Platform Already exists!');
+        }
+
         $social = new Social;
         $social->name = $upper;
         $social->code = $lower;
@@ -46,6 +52,12 @@ class SocialController extends Controller
 
         $lower = strtolower($request->name);        // all of letter are lower cases
         $upper = ucwords($lower);                   // except the first letter of each word
+
+        $exist = Social::where('code', $lower)->count();
+
+        if ($exist != 0) {
+            return redirect('/social/all')->with('error', 'Platform Already exists!');
+        }
 
         $social->name = $upper;
         $social->code = $lower;

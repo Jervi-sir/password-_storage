@@ -20,6 +20,13 @@ class AccountController extends Controller
         $social_input = strtolower($request->social);
         $social_id = Social::where('code', $social_input)->first()->id;
 
+        //check if email already exist
+        $user =  Auth()->user();
+        $exist = Account::where('user_id', $user->id)->where('name', $request->email)->count();
+
+        if ($exist != 0) {
+            return back()->with('error', 'Account Already exists!');
+        }
         $account = new Account;
         $account->user_id = Auth()->user()->id;
         $account->social_id = $social_id;

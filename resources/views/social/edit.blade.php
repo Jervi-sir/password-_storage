@@ -35,7 +35,7 @@
               <div class="mt-4">
                   <x-label for="name" :value="__('Old Platform Name')" />
   
-                  <x-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" value="{{ $social->name }}"  disabled/>
+                  <x-input id="name" class="bg-gray-100 block mt-1 w-full" type="text" name="name" :value="old('name')" value="{{ $social->name }}"  disabled/>
               </div>
 
               <!-- New name -->
