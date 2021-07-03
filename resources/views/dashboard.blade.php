@@ -30,6 +30,12 @@
             <a href="{{ route('account.show') }}" class="cursor-pointer text-center bg-transparent hover:bg-green-500 text-green-700 font-semibold hover:text-white py-2 px-4 border border-green-500 hover:border-transparent rounded">
                 Show/Edit Account
             </a>
+            <a href="{{ route('project.add') }}" class="cursor-pointer text-center bg-transparent hover:bg-yellow-500 text-yellow-700 font-semibold hover:text-white py-2 px-4 border border-yellow-500 hover:border-transparent rounded">
+                Add Project
+            </a>
+            <a href="{{ route('project.all') }}" class="cursor-pointer text-center bg-transparent hover:bg-yellow-500 text-yellow-700 font-semibold hover:text-white py-2 px-4 border border-yellow-500 hover:border-transparent rounded">
+                Show/Edit Project
+            </a>
               
         </div>
 
