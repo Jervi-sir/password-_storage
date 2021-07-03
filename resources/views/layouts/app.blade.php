@@ -15,6 +15,12 @@
 
         <!-- Scripts -->
         <script src="{{ asset('js/app.js') }}" defer></script>
+        <style>
+          hr.rounded {
+            border-top: 2px solid #bbbbbb38;
+            border-radius: 5px;
+          }
+        </style>
     </head>
     <body>
       
@@ -31,14 +37,21 @@
           </div>
           <nav :class="{'block': open, 'hidden': !open}" class="flex-grow md:block px-4 pb-4 md:pb-0 md:overflow-y-auto">
             <p class="select-none block px-4 py-2 text-lg font-semibold rounded-lg dark-mode:bg-gray-700 dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline">{{ Auth()->user()->name }}</p>
-            <a class="{{ (request()->is('account/show')) ? 'text-gray-900 bg-gray-200' : 'text-gray-900' }} block px-4 py-2 mt-2 text-sm font-semibold rounded-lg dark-mode:bg-gray-700 dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="{{ route('account.show') }}">Show All Accounts</a>
-            <a class="{{ (request()->is('account/add')) ? 'text-gray-900 bg-gray-200' : 'text-gray-900' }} block px-4 py-2 mt-2 text-sm font-semibold  bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="{{ route('account.add') }}">Add Account</a>
-            <a class="{{ (request()->is('social/add')) ? 'text-gray-900 bg-gray-200' : 'text-gray-900' }} block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="{{ route('social.add') }}">Add a Platform</a>
-            <a class="{{ (request()->is('social/all')) ? 'text-gray-900 bg-gray-200' : 'text-gray-900' }} block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="{{ route('social.all') }}">Show All Platforms</a>
-            <a class="{{ (request()->is('statistic/all')) ? 'text-gray-900 bg-gray-200' : 'text-gray-900' }} block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="{{ route('statistic.all') }}">Statistiques</a>
+            <hr class="rounded">
+            <a class="{{ (request()->is('account/show')) ? 'text-gray-900 bg-gray-200' : 'text-gray-900' }} block px-4 py-2 my-2 text-sm font-semibold rounded-lg dark-mode:bg-gray-700 dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="{{ route('account.show') }}">Show All Accounts</a>
+            <a class="{{ (request()->is('account/add')) ? 'text-gray-900 bg-gray-200' : 'text-gray-900' }} block px-4 py-2 my-2 text-sm font-semibold  bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="{{ route('account.add') }}">Add Account</a>
+            <hr class="rounded">
+            <a class="{{ (request()->is('social/all')) ? 'text-gray-900 bg-gray-200' : 'text-gray-900' }} block px-4 py-2 my-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="{{ route('social.all') }}">Show All Platforms</a>
+            <a class="{{ (request()->is('social/add')) ? 'text-gray-900 bg-gray-200' : 'text-gray-900' }} block px-4 py-2 my-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="{{ route('social.add') }}">Add a Platform</a>
+            <hr class="rounded">
+            <a class="{{ (request()->is('project/all')) ? 'text-gray-900 bg-gray-200' : 'text-gray-900' }} block px-4 py-2 my-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="{{ route('project.all') }}">Show All Projects</a>
+            <a class="{{ (request()->is('project/add')) ? 'text-gray-900 bg-gray-200' : 'text-gray-900' }} block px-4 py-2 my-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="{{ route('project.add') }}">Add a Project</a>
+            <hr class="rounded">
+            <a class="{{ (request()->is('statistic/all')) ? 'text-gray-900 bg-gray-200' : 'text-gray-900' }} block px-4 py-2 my-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="{{ route('statistic.all') }}">Statistiques</a>
+            <hr class="rounded">
             <form method="POST" action="{{ route('logout') }}">
                 @csrf
-                <button type="submit" class="{{ (request()->is('/logout')) ? 'text-gray-900 bg-gray-200' : 'text-gray-900' }} block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="#">Logout</button>
+                <button type="submit" class="{{ (request()->is('/logout')) ? 'text-gray-900 bg-gray-200' : 'text-gray-900' }} block px-4 py-2 my-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="#">Logout</button>
             </form>
           </nav>
         </div>
@@ -47,5 +60,6 @@
           {{ $slot }}
         </div>
       </div>
+      
     </body>
 </html>

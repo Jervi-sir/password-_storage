@@ -3,6 +3,9 @@
 namespace App\Models;
 
 use App\Models\Social;
+use App\Models\Account;
+use App\Models\Project;
+use App\Models\ProjectAccount;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -51,5 +54,19 @@ class User extends Authenticatable
     {
         return $this->hasMany(Account::class);
     }
+
+
+    public function project_accounts()
+    {
+        return $this->hasMany(ProjectAccount::class);
+    }
+
+
+    public function projects()
+    {
+        return $this->hasMany(Project::class);
+    }
+
+    
 
 }

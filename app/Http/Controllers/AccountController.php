@@ -12,7 +12,7 @@ class AccountController extends Controller
     {
         $socials = Social::all();
 
-        return view('accounts.index', ['socials' => $socials]);
+        return view('accounts.add', ['socials' => $socials]);
     }
 
     public function upload(Request $request)
@@ -38,7 +38,7 @@ class AccountController extends Controller
         return back()->with('alert', 'Added Successfully!');
     }
 
-    public function show(Request $request)
+    public function show()
     {
         $user = Auth()->user();
         $accounts = $user->accounts()->get();

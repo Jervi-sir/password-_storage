@@ -10,7 +10,7 @@ class SocialController extends Controller
 
     public function add()
     {
-        return view('social.index');
+        return view('social.add');
     }
 
     public function upload(Request $request)
