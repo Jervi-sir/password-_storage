@@ -3,6 +3,6 @@
 
 Personal use, maybe it will be a project soon, 
 
-- [Laravel](https://laravel.com/docs/routing).
-- [Tailwind](https://laravel.com/docs/container).
+- [Laravel](https://laravel.com).
+- [Tailwind](https://tailwindcss.com/).
 
