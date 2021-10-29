@@ -33,8 +33,8 @@ class AccountController extends Controller
         $account->social_id = $social_id;
         $account->name = $request->email;
         $account->password = $request->password;
+        $account->details = $request->details;
         $account->save();
-
         return back()->with('alert', 'Added Successfully!');
     }
 

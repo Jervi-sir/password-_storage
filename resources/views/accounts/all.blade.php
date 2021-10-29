@@ -88,7 +88,7 @@ foreach ($social_used as $social)
                                                 <p>{{ $account->old_passwords }}</p>
                                             </div>
                                         </td>
-                                        <td class="border px-6 py-4">{{ $account->description }}</td>
+                                        <td class="border px-6 py-4">{{ $account->details }}</td>
                                         <td class="border px-6 py-4 w-1">
                                             <div class="inline-flex ">
                                             <form action="{{ route('account.edit') }}" method="POST">

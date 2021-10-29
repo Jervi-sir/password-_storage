@@ -59,6 +59,12 @@
                                 required autocomplete="new-password" />
             </div>
 
+            <div class="mt-4">
+              <x-label for="detail" :value="__('Details')" />
+
+              <x-input id="detail" class="block mt-1 w-full" type="text" name="details" :value="old('details')" required />
+            </div>
+
             <div class="flex items-center justify-end mt-4">
                 <x-button class="ml-4">
                     {{ __('Register') }}
