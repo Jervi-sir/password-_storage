@@ -55,6 +55,13 @@
                                   required autocomplete="new-password" />
               </div>
 
+              <!-- Details -->
+              <div class="mt-4">
+                <x-label for="detail" :value="__('Details')" />
+  
+                <x-input id="detail" class="block mt-1 w-full" type="text" value="{{ $account->details }}" name="details" required />
+              </div>
+
               <!-- Old Passwords -->
               <div class="mt-4">
                 <x-label for="details" :value="__('Old Passwords')" />

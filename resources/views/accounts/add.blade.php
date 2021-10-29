@@ -59,6 +59,7 @@
                                 required autocomplete="new-password" />
             </div>
 
+              <!-- Details -->
             <div class="mt-4">
               <x-label for="detail" :value="__('Details')" />
 

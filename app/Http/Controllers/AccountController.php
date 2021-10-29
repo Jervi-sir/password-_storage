@@ -76,7 +76,8 @@ class AccountController extends Controller
             $account->old_passwords = $current_password . ', ' . $old_passwords;
         }
         $account->password = $request->password;
-        $account->details = $request->description;
+        $account->details = $request->details;
+
         $account->save();
 
         return redirect('/account/show')->with('alert', 'Updated Successfully!');
