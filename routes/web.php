@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Artisan;
 use App\Http\Controllers\SocialController;
 use App\Http\Controllers\AccountController;
 use App\Http\Controllers\ProjectController;
@@ -16,6 +17,17 @@ use App\Http\Controllers\StatisticController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+Route::get('/clear', function() {
+
+    Artisan::call('cache:clear');
+    Artisan::call('config:clear');
+    Artisan::call('config:cache');
+    Artisan::call('view:clear');
+
+    return "Cleared!";
+
+ });
 
 Route::get('/', function () {
     return redirect('/login');
@@ -57,7 +69,7 @@ Route::prefix('project')->group(function () {
         Route::post('/upload', [ProjectController::class, 'accountUpload'])->name('projectAccount.upload');
         Route::post('/update', [ProjectController::class, 'accountUpdate'])->name('projectAccount.update');
         Route::post('/delete', [ProjectController::class, 'accountDestroy'])->name('projectAccount.delete');
-        
+
     });
 });
 

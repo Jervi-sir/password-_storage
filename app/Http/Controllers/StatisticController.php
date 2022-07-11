@@ -8,6 +8,7 @@ class StatisticController extends Controller
 {
     public function index()
     {
+        dd("coming soon boiiii, just I have to finish important project, this site is just for me for my account's credentials");
         $user = Auth()->user();
         $accounts = $user->accounts()->get();
 
