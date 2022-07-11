@@ -2,7 +2,7 @@
 
 ## About 
 
-a project since 2020, made purpurcely for own usage, maybe it can become a Saas product, idk anyway:
+a project since Jun 29, 2021, made purpurcely for own usage, maybe it can become a Saas product, idk anyway:
 
 ## Progress
 
