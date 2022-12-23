@@ -13,4 +13,4 @@ php artisan route:cache
 echo "Running migrations..."
 #php artisan migrate:fresh --force
 
-npm run dev
+npm run build
