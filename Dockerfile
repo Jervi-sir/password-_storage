@@ -17,4 +17,8 @@ ENV LOG_CHANNEL stderr
 # Allow composer to run as root
 ENV COMPOSER_ALLOW_SUPERUSER 1
 
+RUN mkdir /.ssh
+RUN chown nobody:nobody /.ssh
+USER nobody:nobody
+
 CMD ["/start.sh"]
