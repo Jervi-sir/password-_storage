@@ -11,7 +11,7 @@ echo "Caching routes..."
 php artisan route:cache
 
 echo "Running migrations..."
-php artisan migrate:fresh --force
+#php artisan migrate --force
 
 npm install --save-dev vite laravel-vite-plugin
 npm install --save-dev @vitejs/plugin-vue
